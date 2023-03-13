@@ -43,12 +43,17 @@ def run_experiment():
     print(f"Inefficient implementation: {sum(inefficient_times)/num_measurements:.8f} seconds (min: {min(inefficient_times):.8f} seconds)")
     print(f"Efficient implementation: {sum(efficient_times)/num_measurements:.8f} seconds (min: {min(efficient_times):.8f} seconds)")
 
-    fig, ax = plt.subplots()
-    ax.hist(inefficient_times, bins=10, alpha=0.5, label='Inefficient')
-    ax.hist(efficient_times, bins=10, alpha=0.5, label='Efficient')
-    ax.legend(loc='upper right')
-    ax.set_xlabel('Execution Time (seconds)')
-    ax.set_ylabel('Frequency')
+
+    plt.hist(inefficient_times,  alpha=0.5, label='Inefficient')
+    plt.hist(efficient_times, alpha=0.5, label='Efficient')
+    plt.legend(loc='upper right')
+    plt.set_xlabel('Execution Time (seconds)')
+    plt.set_ylabel('Frequency')
     plt.show()
+
+
+
+
+
 
 run_experiment()
